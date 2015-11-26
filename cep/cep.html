@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+
+            function mostrarResultado(box, campospan) {
+                var contagem_carac = box.length;
+                if (contagem_carac != 0) {
+                    document.getElementById(campospan).innerHTML = "Cep Inválido";
+                    if (contagem_carac == 8) {
+
+                        document.getElementById(campospan).innerHTML = "Cep válido";
+                    } else if (contagem_carac >= 9) {
+                        alert("Você excedeu o número máximo de caracteres!!!");
+                    } else if (contagem_carac == 89700000) {
+                        document.getElementById(campospan).innerHTML = "Concórdia - SC";
+                    }
+
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <form method="post">
+
+            ​        <input type="number" name="msg" placeholder="Digite seu CEP aqui" id="msg" onkeyup="mostrarResultado(this.value, 'spcontando');
+                    contarCaracteres(this.value, 8, 'sprestante')"><br />
+
+            <span id="spcontando"></span><br />
+        </form>
+        <br />
+    </body>
+</html>

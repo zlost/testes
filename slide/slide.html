@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            array1 = new Array("img_1.jpg", "img_2.jpg", "img_3.png", "img_4.png", "img_5.png")
+
+            function comeco() {
+                document.getElementById('imgId').src = array1[0]
+                document.form.texto.value = "0"
+            }
+
+            function mais() {
+                document.form.texto.value = Math.floor(1 + 1 - 2 + (document.form.texto.value) * 1 + 1)
+                if (document.form.texto.value >= array1.length)
+                {
+                    document.form.texto.value = 0
+                }
+            }
+
+            function menos() {
+                document.form.texto.value = Math.floor(1 + 1 - 2 + (document.form.texto.value) * 1 - 1)
+                if (document.form.texto.value < 0)
+                {
+                    document.form.texto.value = array1.length
+                }
+            }
+
+            function regular() {
+                document.getElementById('imgId').src = array1[document.form.texto.value];
+                setTimeout("regular()", 1)
+            }
+            setInterval("mais()", 1000);
+
+//            var pessoas = new Array("Maria", "Carlos", "Igor");
+//            document.write("Valores no array: " + pessoas + "<br>");
+//            document.write("O array contém: " + pessoas.length + " elementos");
+        </script>
+    <body onLoad="comeco();
+            regular()">
+        <a id="prev" style="position: relative; top: -100px;" href="javascript:menos()"><img width="30" src="voltar.png"></a>
+        <a id="aId"><img id="imgId"></a>
+        <a id="next" style="position: relative; top: -100px;" href="javascript:mais()"><img width="30"  src="passar.png"></a>
+        </br>
+        <style>
+            .escrita { 
+                width: 100%;
+                float: left;
+                font-size: 20px;
+                text-align: left;
+                margin-left: 170px;
+            }
+            .escrita_1{ 
+                width: 100%;
+                float: left;
+                font-size: 20px;
+                text-align: left;
+                margin-left: 265px;
+            }
+        </style>
+        <span class="escrita">Exibindo slide n&uacutemero</span>
+        <form name="form">
+            <input class="escrita_1" style="width: 15px;border: none;" type=text name="texto">
+        </form>
+    </body>
+</HTML>

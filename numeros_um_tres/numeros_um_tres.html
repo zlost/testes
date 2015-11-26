@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            .botao{
+                color: #fff;
+                background-color: #337ab7;
+                border-color: #2e6da4;
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.42857143;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+                border-radius: 4px;
+            }
+        </style>
+        <button class="botao" onclick="funcao_tres_numeros()">Mostrar 3 valores em ordem crescente</button>
+        <p id="mostrar"></p>
+        <script type="text/javascript">
+            function funcao_tres_numeros() {
+                var n1 = Math.round(Math.random() * 100);
+                var n2 = Math.round(Math.random() * 100);
+                var n3 = Math.round(Math.random() * 100);
+                var array1 = [n1, n2, n3];
+                array1.toString();
+                array1.sort(function (a, b) {
+                    return a > b;
+                });
+                document.getElementById("mostrar").innerHTML = array1;
+
+            }
+        </script>
+    </body>
+</html>

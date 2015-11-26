@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <p>Clique no botão para aparecer 5 números de 1 a 100</p>
+        <style>
+            .botao{
+                color: #fff;
+                background-color: #337ab7;
+                border-color: #2e6da4;
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.42857143;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+                border-radius: 4px;
+            }
+        </style>
+
+        <button class="botao" onclick="aparecer_numero()">Clique para aparecer!</button>
+
+        <p id="numero"></p>
+        <p id="numero1"></p>
+        <p id="numero2"></p>
+        <p id="numero3"></p>
+        <p id="numero4"></p>
+
+        <script>
+            function aparecer_numero() {
+                var random = document.getElementById("numero");
+                random.innerHTML = Math.floor((Math.random() * 100) + 1);
+                var random = document.getElementById("numero1");
+                random.innerHTML = Math.floor((Math.random() * 100) + 1);
+                var random = document.getElementById("numero2");
+                random.innerHTML = Math.floor((Math.random() * 100) + 1);
+                var random = document.getElementById("numero3");
+                random.innerHTML = Math.floor((Math.random() * 100) + 1);
+                var random = document.getElementById("numero4");
+                random.innerHTML = Math.floor((Math.random() * 100) + 1);
+            }
+        </script>
+
+    </body>
+</html>
